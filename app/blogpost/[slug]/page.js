@@ -8,6 +8,7 @@ import rehypeStringify from "rehype-stringify";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import OnThisPage from "@/components/onthispage";
 
 // Generate dynamic paths
 export async function generateStaticParams() {
@@ -55,6 +56,7 @@ export default async function Page({ params }) {
         dangerouslySetInnerHTML={{ __html: htmlContent }}
         className="prose dark:prose-invert"
       ></div>
+      <OnThisPage htmlContent={htmlContent} />
     </div>
   );
 }
